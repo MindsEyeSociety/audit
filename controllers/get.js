@@ -5,6 +5,7 @@
  */
 
 const router    = require( 'express' ).Router();
+const _         = require( 'lodash' );
 
 const Event     = require( '../models/event' );
 const Reference = require( '../models/reference' );
@@ -127,9 +128,24 @@ function parseToken( req, res, next ) {
 		return next( new UserError( 'Token not provided', 403 ) );
 	}
 
-	// TODO: Validate token in User Hub.
+	const request = require( 'request-promise' );
+	const config  = require( '../config/hub.json' );
 
-	next();
+	return request({
+		url: config.host + '/v1/office/me',
+		qs: { token: req.query.token },
+		json: true
+	})
+	.then( resp => {
+		if ( ! resp.length ) {
+			return next( new UserError( 'No offices found', 403 ) );
+		}
+		next();
+	})
+	.catch( err => {
+		let msg = _.get( err, 'response.body.message', 'Token error' );
+		next( new UserError( msg, 403 ) );
+	});
 }
 
 module.exports = router;
