@@ -8,7 +8,7 @@ const prefix   = '/v' + version.split( '.' ).shift();
 
 router.get( '/',
 	( req, res ) => {
-		res.json({ message: 'Welcome to the authentication system', version: version });
+		res.json({ message: 'Welcome to the audit system', version: version });
 	}
 );
 

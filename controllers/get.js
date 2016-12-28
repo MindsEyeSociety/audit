@@ -131,13 +131,40 @@ function parseToken( req, res, next ) {
 	const request = require( 'request-promise' );
 	const config  = require( '../config/hub.json' );
 
+	const query   = req.query;
+
+	let type  = 'orgunit';
+	let id    = '1';
+	let roles = 'audit';
+	if ( 'user-hub' === query.service ) {
+		if ( query.object ) {
+			type = query.object;
+		}
+		if ( query.objectId ) {
+			id = query.objectId;
+		}
+	}
+	if ( query.user ) {
+		type = 'user';
+		id = query.user;
+	}
+
+	if ( query.service ) {
+		roles = 'audit,audit_' + query.service;
+	}
+
+	id = Number.parseInt( id );
+
 	return request({
-		url: config.host + '/v1/office/me',
-		qs: { token: req.query.token },
+		url: config.host + `/v1/office/verify/${type}/${id}`,
+		qs: {
+			token: query.token,
+			roles
+		},
 		json: true
 	})
 	.then( resp => {
-		if ( ! resp.length ) {
+		if ( ! resp.success ) {
 			return next( new UserError( 'No offices found', 403 ) );
 		}
 		next();
