@@ -133,30 +133,14 @@ function parseToken( req, res, next ) {
 
 	const query   = req.query;
 
-	let type  = 'orgunit';
-	let id    = '1';
 	let roles = 'audit';
-	if ( 'user-hub' === query.service ) {
-		if ( query.object ) {
-			type = query.object;
-		}
-		if ( query.objectId ) {
-			id = query.objectId;
-		}
-	}
-	if ( query.user ) {
-		type = 'user';
-		id = query.user;
-	}
 
 	if ( query.service ) {
 		roles = 'audit,audit_' + query.service;
 	}
 
-	id = Number.parseInt( id );
-
 	return request({
-		url: config.host + `/v1/office/verify/${type}/${id}`,
+		url: config.host + `/v1/office/verify/orgunit/1`,
 		qs: {
 			token: query.token,
 			roles
