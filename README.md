@@ -4,7 +4,7 @@ General purpose auditing system
 Details of the endpoints can be found in the [docs](docs) directory.
 
 [![Dependency Status](https://david-dm.org/MindsEyeSociety/audit.svg)](https://david-dm.org/MindsEyeSociety/audit)
-[![Build Status](https://travis-ci.org/MindsEyeSociety/audit.svg?branch=master)](https://travis-ci.org/MindsEyeSocietyaudit)
+[![Build Status](https://travis-ci.org/MindsEyeSociety/audit.svg?branch=master)](https://travis-ci.org/MindsEyeSociety/audit)
 
 ## Installation
 1. `npm install`

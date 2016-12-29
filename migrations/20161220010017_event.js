@@ -8,7 +8,7 @@ exports.up = function( knex, Promise ) {
 		table.text( 'message' );
 		table.json( 'metadata' );
 		table.text( 'delta' );
-		table.dateTime( 'createdAt' ).notNullable().index().defaultTo( knex.raw( 'NOW()' ) );
+		table.timestamp( 'createdAt' ).notNullable().defaultTo( knex.fn.now() );
 		table.dateTime( 'occurredAt' ).notNullable().index();
 	});
 };

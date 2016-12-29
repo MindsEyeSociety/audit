@@ -117,7 +117,7 @@ module.exports = function() {
 				}
 
 				// Delay, as saving the references takes a bit longer.
-				Promise.delay( 100 ).then( () => {
+				Promise.delay( 200 ).then( () => {
 					new Reference({ service: 'audit-test' })
 					.fetch({ require: true })
 					.then( row => {
