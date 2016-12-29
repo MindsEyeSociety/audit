@@ -14,8 +14,8 @@
     "body-parser": "^1.13.2",
     "bookshelf": "^0.10.2",
     "cookie-parser": "~1.4.0",
-    "express": "~4.13.1",
-    "knex": "^0.10.0",
+    "express": "~4.14.0",
+    "knex": "^0.12.6",
     "lodash": "^4.6.1",
     "morgan": "^1.7.0",
     "mysql": "^2.10.2",
@@ -23,13 +23,12 @@
     "request-promise": "^4.1.1"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-eslint": "^18.0.0",
-    "grunt-jscs": "^2.1.0",
-    "load-grunt-tasks": "^3.2.0",
-    "mocha": "^2.4.5",
-    "pretty-error": "^2.0.0",
-    "should": "^8.3.1",
-    "supertest": "^1.2.0"
+    "grunt": "^1.0.1",
+    "grunt-eslint": "^19.0.0",
+    "grunt-jscs": "^3.0.1",
+    "mocha": "^3.2.0",
+    "pretty-error": "^2.0.2",
+    "should": "^11.1.2",
+    "supertest": "^2.0.1"
   }
 }

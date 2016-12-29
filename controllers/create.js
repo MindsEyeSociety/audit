@@ -53,7 +53,7 @@ router.post( '/events',
 			let refs = _.map( body.references, p => _.pick( p, [
 				'service',
 				'object',
-				'objectId',
+				'objectId'
 			] ) );
 			validReferences = _.filter( refs, r => 3 === _.size( r ) );
 		}
