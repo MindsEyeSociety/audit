@@ -57,11 +57,12 @@ router.post( '/events',
 			] ) );
 			validReferences = _.filter( refs, r => 3 === _.size( r ) );
 		}
-
-		const Event = require( '../models/event' );
+		validInput.occurredAt = new Date( validInput.occurredAt );
 
 		// We return the response without waiting for MySQL, as that slows everything down.
 		res.json({ success: true });
+
+		const Event = require( '../models/event' );
 
 		new Event( validInput )
 		.save()
