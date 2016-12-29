@@ -14,7 +14,7 @@ module.exports = function() {
 		let props = [ 'userId', 'service', 'message', 'occurredAt' ];
 		props.forEach( prop => {
 			it( `fails if missing param ${prop}` );
-		})
+		});
 
 		it( 'returns success on valid body' );
 

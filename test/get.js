@@ -53,7 +53,7 @@ module.exports = function() {
 					}
 					done();
 				});
-			})
+			});
 		});
 	});
 
@@ -103,7 +103,7 @@ module.exports = function() {
 					}
 					res.body.should.have.property( 'message', `Missing required param "${param}"` );
 					done();
-				})
+				});
 			});
 		});
 
@@ -125,7 +125,7 @@ module.exports = function() {
 				res.body.should.have.length( 1 );
 				res.body.forEach( testReference );
 				done();
-			})
+			});
 		});
 	});
 
