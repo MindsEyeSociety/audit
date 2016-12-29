@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "7.3"
+env:
+  - NODE_ENV=testing
+before_script:
+  - npm install -g knex grunt-cli
+  - for file in ./config/*.default.json; do cp "$file" "${file/.default.json/.json}"; done
+  - cp ./config/db.travis.json ./config/db.json
+  - mysql -e 'create database audit'
+  - knex migrate:latest
+  - knex seed:run
+services:
+  - mysql

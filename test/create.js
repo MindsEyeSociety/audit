@@ -131,7 +131,7 @@ module.exports = function() {
 						]);
 						done();
 					})
-				 	.catch( err => done( err ) );
+					.catch( err => done( err ) );
 				});
 			});
 		} );
