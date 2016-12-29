@@ -140,7 +140,7 @@ function parseToken( req, res, next ) {
 	}
 
 	return request({
-		url: config.host + `/v1/office/verify/orgunit/1`,
+		url: config.host + '/office/verify/orgunit/1',
 		qs: {
 			token: query.token,
 			roles

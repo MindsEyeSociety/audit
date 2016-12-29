@@ -20,6 +20,11 @@ if ( 'development' === app.get( 'env' ) ) {
 // Load routes.
 app.use( require( './controllers' ) );
 
+// Sets up fake Hub token authentication, for testing.
+if ( 'testing' === app.get( 'env' ) ) {
+	app.use( require( './test/hub-helper' ) );
+}
+
 // Catch 404 and forward to error handler
 app.use( ( req, res, next ) => {
 	var err = new Error( 'Not Found' );

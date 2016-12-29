@@ -19,7 +19,7 @@ exports.seed = ( knex, Promise ) => {
 			officeId: 1,
 			service: 'user-hub-v1',
 			message: 'Bob deleted Steve',
-			occurredAt: '2016-12-19 11:00:00'
+			occurredAt: '2016-12-20 11:00:00'
 		}
 	]) );
 };
