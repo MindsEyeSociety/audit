@@ -1,7 +1,7 @@
 # MES Auditing
 General purpose auditing system
 
-Details of the endpoints can be found in the [docs](docs) directory.
+Details of the endpoints can be found [here](https://mindseyesociety.github.io/audit/).
 
 [![Dependency Status](https://david-dm.org/MindsEyeSociety/audit.svg)](https://david-dm.org/MindsEyeSociety/audit)
 [![Build Status](https://travis-ci.org/MindsEyeSociety/audit.svg?branch=master)](https://travis-ci.org/MindsEyeSociety/audit)
