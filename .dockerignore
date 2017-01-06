@@ -1,0 +1,7 @@
+node_modules
+.*
+docs
+test.sh
+switch.sh
+config/*.json
+!config/*.default.json

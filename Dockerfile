@@ -1,12 +1,14 @@
-FROM node
+FROM node:7.3
 
-RUN npm install
-
-RUN npm install -g nodemon knex
+RUN npm install -g nodemon knex forever
 
 EXPOSE 3000
-EXPOSE 1010
+EXPOSE 3030
+
+ADD . /app
 
 WORKDIR /app
 
-CMD ./init.sh
+RUN npm install
+
+CMD [ "forever", "app.js" ]
